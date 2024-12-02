@@ -8,6 +8,24 @@ import (
 	"strings"
 )
 
+func GetListsSimilarity(path string) (int, error) {
+	list1, list2, err := getListsFromPath(path)
+	if err != nil {
+		return 0, err
+	}
+	appearances := make(map[int]int)
+
+	for _, element := range list2 {
+		appearances[element]++
+	}
+
+	similarity := 0
+	for _, element := range list1 {
+		similarity += element * appearances[element]
+	}
+
+	return similarity, nil
+}
 func GetListsDifference(path string) (int, error) {
 	list1, list2, err := getListsFromPath(path)
 	if err != nil {

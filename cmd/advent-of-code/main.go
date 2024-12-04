@@ -6,6 +6,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day1"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day2"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day3"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
 )
 
 func main() {
@@ -13,6 +14,7 @@ func main() {
 	callDay1()
 	callDay2()
 	callDay3()
+	callDay4()
 }
 
 func callDay1() {
@@ -64,4 +66,18 @@ func callDay3() {
 	}
 
 	fmt.Printf("The programs output is: %d\n", res)
+}
+
+func callDay4() {
+	fmt.Println("Day 4:")
+	fmt.Println("Get count of word appearances on input")
+
+	path := "assets/day4input.txt"
+	crossedMasAppearances, xmasAppearances, err := day4.WordSearchSolveFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the word count: %v \n", err)
+	}
+
+	fmt.Printf("The word count is: %d\n", xmasAppearances)
+	fmt.Printf("The count of times MAS appeared crossed is: %d\n", crossedMasAppearances)
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day3"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day5"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day6"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	callDay3()
 	callDay4()
 	callDay5()
+	callDay6()
 }
 
 func callDay1() {
@@ -52,6 +54,7 @@ func callDay2() {
 	safeReports, err := day2.GetSafeReportQuantityFromFile(path)
 	if err != nil {
 		fmt.Printf("Error getting the quantity of safe reports from file: %v \n", err)
+		return
 	}
 
 	fmt.Printf("The number of safe reports with the dampener is to %d \n", safeReports)
@@ -65,6 +68,7 @@ func callDay3() {
 	res, err := day3.GetProgramsOutputFromFile(path)
 	if err != nil {
 		fmt.Printf("Error getting the programs output from file: %v \n", err)
+		return
 	}
 
 	fmt.Printf("The programs output is: %d\n", res)
@@ -78,6 +82,7 @@ func callDay4() {
 	crossedMasAppearances, xmasAppearances, err := day4.WordSearchSolveFromFile(path)
 	if err != nil {
 		fmt.Printf("Error getting the word count: %v \n", err)
+		return
 	}
 
 	fmt.Printf("The word count is: %d\n", xmasAppearances)
@@ -92,7 +97,21 @@ func callDay5() {
 	res, fixedRes, err := day5.GetCorrectUpdatesMiddleNumberSumFromFile(path)
 	if err != nil {
 		fmt.Printf("Error getting the sum: %v\n", err)
+		return
 	}
 
 	fmt.Printf("The sum is: %d, the fixed sum is: %d\n", res, fixedRes)
+}
+
+func callDay6() {
+	fmt.Println("Day 6:")
+	fmt.Println("Get guards path size given factory layout")
+	path := "assets/day6input.txt"
+	res, loopLocations, err := day6.GetGuardPathSizeFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the path size: %v\n", err)
+		return
+	}
+	fmt.Printf("The path size is: %d\n", res)
+	fmt.Printf("Theres %d available loop locations \n", loopLocations)
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day2"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day3"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day5"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 	callDay2()
 	callDay3()
 	callDay4()
+	callDay5()
 }
 
 func callDay1() {
@@ -80,4 +82,17 @@ func callDay4() {
 
 	fmt.Printf("The word count is: %d\n", xmasAppearances)
 	fmt.Printf("The count of times MAS appeared crossed is: %d\n", crossedMasAppearances)
+}
+
+func callDay5() {
+	fmt.Println("Day 5:")
+	fmt.Println("Get sum of the middle of the valid ordered updates")
+	path := "assets/day5input.txt"
+
+	res, fixedRes, err := day5.GetCorrectUpdatesMiddleNumberSumFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the sum: %v\n", err)
+	}
+
+	fmt.Printf("The sum is: %d, the fixed sum is: %d\n", res, fixedRes)
 }

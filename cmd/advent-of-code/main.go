@@ -9,6 +9,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day5"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day6"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day7"
 )
 
 func main() {
@@ -18,7 +19,8 @@ func main() {
 	callDay3()
 	callDay4()
 	callDay5()
-	callDay6()
+	//callDay6()
+	callDay7()
 }
 
 func callDay1() {
@@ -114,4 +116,16 @@ func callDay6() {
 	}
 	fmt.Printf("The path size is: %d\n", res)
 	fmt.Printf("Theres %d available loop locations \n", loopLocations)
+}
+
+func callDay7() {
+	fmt.Println("Day 7:")
+	fmt.Println("Get calibration results")
+	path := "assets/day7input.txt"
+	res, err := day7.GetCalibrationResultFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the calibration result: %v\n", err)
+		return
+	}
+	fmt.Printf("The calibration result is: %d\n", res)
 }

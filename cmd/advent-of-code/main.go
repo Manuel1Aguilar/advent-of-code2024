@@ -10,6 +10,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day5"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day6"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day7"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day8"
 )
 
 func main() {
@@ -21,6 +22,7 @@ func main() {
 	callDay5()
 	//callDay6()
 	callDay7()
+	callDay8()
 }
 
 func callDay1() {
@@ -128,4 +130,15 @@ func callDay7() {
 		return
 	}
 	fmt.Printf("The calibration result is: %d\n", res)
+}
+func callDay8() {
+	fmt.Println("Day 8:")
+	fmt.Println("Get antinodes qty")
+	path := "assets/day8input.txt"
+	res, err := day8.GetValidAntinodesFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the antinode qty: %v\n", err)
+		return
+	}
+	fmt.Printf("The antinode qty is: %d\n", res)
 }

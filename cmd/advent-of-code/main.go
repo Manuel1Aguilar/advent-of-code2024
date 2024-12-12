@@ -11,6 +11,7 @@ import (
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day6"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day7"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day8"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day9"
 )
 
 func main() {
@@ -23,6 +24,7 @@ func main() {
 	//callDay6()
 	callDay7()
 	callDay8()
+	callDay9()
 }
 
 func callDay1() {
@@ -141,4 +143,15 @@ func callDay8() {
 		return
 	}
 	fmt.Printf("The antinode qty is: %d\n", res)
+}
+func callDay9() {
+	fmt.Println("Day 9:")
+	fmt.Println("Get disk checksum")
+	path := "assets/day9input.txt"
+	res, err := day9.GetCorrectDiskChecksumFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the disks checksum: %v\n", err)
+		return
+	}
+	fmt.Printf("The disks checksum is: %d\n", res)
 }

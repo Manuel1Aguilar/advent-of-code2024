@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day1"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day10"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day2"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day3"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
@@ -25,6 +26,7 @@ func main() {
 	callDay7()
 	callDay8()
 	callDay9()
+	callDay10()
 }
 
 func callDay1() {
@@ -154,4 +156,16 @@ func callDay9() {
 		return
 	}
 	fmt.Printf("The disks checksum is: %d\n", res)
+}
+
+func callDay10() {
+	fmt.Println("Day 10:")
+	fmt.Println("Get trail heads scores")
+	path := "assets/day10input.txt"
+	res, err := day10.GetTrailMapScoreFromFile(path)
+	if err != nil {
+		fmt.Printf("Error getting the trails scores: %v\n", err)
+		return
+	}
+	fmt.Printf("The score is: %d\n", res)
 }

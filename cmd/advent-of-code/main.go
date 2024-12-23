@@ -5,6 +5,7 @@ import (
 
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day1"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day10"
+	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day11"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day2"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day3"
 	"github.com/Manuel1Aguilar/advent-of-code2024/internal/day4"
@@ -27,6 +28,7 @@ func main() {
 	callDay8()
 	callDay9()
 	callDay10()
+	callDay11()
 }
 
 func callDay1() {
@@ -168,4 +170,17 @@ func callDay10() {
 		return
 	}
 	fmt.Printf("The score is: %d\n", res)
+}
+func callDay11() {
+	fmt.Println("Day 11:")
+	blinkQty := 75
+	// This is a naive brute force solution, just left it running a
+	fmt.Printf("Get rock quantity after %d blinks\n", blinkQty)
+	path := "assets/day11input.txt"
+	res, err := day11.GetRockSizeAfterNBlinksFromFile(path, blinkQty)
+	if err != nil {
+		fmt.Printf("Error getting the rock quantity: %v\n", err)
+		return
+	}
+	fmt.Printf("The rock quantity is: %d\n", res)
 }
